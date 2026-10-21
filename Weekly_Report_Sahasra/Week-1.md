@@ -1,8 +1,8 @@
 # Weekly Report – Week 1
 
-Name: Rondla Sahasra Reddy 
-Role: Intern
-Mentor: Sai Kumar Yerra
+- Name: Rondla Sahasra Reddy 
+- Role: Intern
+- Mentor: Sai Kumar Yerra
 
 ## Brief Summary
 
