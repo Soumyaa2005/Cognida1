@@ -33,7 +33,7 @@ Teams need a tool that finds and ranks bugs using the checks they already trust,
 
 Rino is a web application that connects to GitHub through a GitHub App and works in five stages: connect, run, triage, explain, and propose. For v1 we deliberately kept the AI's role narrow.
 
-![Rino v1 workflow](images/workflow.png)
+![Rino v1 workflow](./images/workflow.png)
 
 Rino v1 workflow:
 
@@ -166,23 +166,23 @@ With the backend and frontend running against a fake GitHub server, we walked th
 
 - Login page:
 
-  ![Login page](images/login.png)
+  ![Login page](./images/login.png)
 
 - Settings → Users & roles:
 
-  ![Settings → Users & roles](images/settings-users-roles.png)
+  ![Settings → Users & roles](./images/settings-users-roles.png)
 
 - Repository Setup with a repo marked Ready:
 
-  ![Repository Setup – Ready](images/repo-setup-ready.png)
+  ![Repository Setup – Ready](./images/repo-setup-ready.png)
 
 - Repository Setup showing Needs attention reasons:
 
-  ![Repository Setup – Needs attention](images/repo-setup-needs-attention.png)
+  ![Repository Setup – Needs attention](./images/repo-setup-needs-attention.png)
 
 - Developer view with repo and branch picker:
 
-  ![Developer view](images/developer-view.png)
+  ![Developer view](./images/developer-view.png)
 
 ### Observations
 
