@@ -48,6 +48,11 @@ During Week 2, I worked on defining the requirements and workflow for **Rino –
     - Understood more about raising a PR, it's importance, how to merge, how to resolve the conflicts, how it would effect other branches.
     - Renamed and moved Weekly reports, created a seperate folder for each of us and moved our report into that folder.
     - Defined GitHub rules for main branch to have atleast 1 reviewer approve a PR before letting it merge with the main. 
+- **Created a POC and Prototype:**
+    - Created Wireframes to define how the interfaces should look and work.
+    - Built a working prototype to an extent.
+    - Created the first Proof-of-concept document mentioning the objective, problem statement, proposed solution, tech stack, implementation and images of the prototype. [POC1.md](https://github.com/Soumyaa2005/Cognida1/blob/AI_Powered_Software_Agent/Rino_Documentation/POC1.md)
+    - Also created a Project_Info.md file and worked on documentation related to the project. [Project_Info.md](https://github.com/Soumyaa2005/Cognida1/blob/AI_Powered_Software_Agent/Rino_Documentation/Project_Info.md)
 
 ## 3. Key Outcomes
 
