@@ -5,9 +5,9 @@ In Week 2 we worked on a shared  Github repository and shortlisted a project - A
 
 
 ## Tasks finished:
-1. **Finialised the project and Found basic project information**
+1. **Finalized the project and Found basic project information**
 
-    - We looked at multiple different projects and decided on AI-powered Software Agent.
+    - We looked at multiple different projects and decided on AI-Powered Software Agent.
     - Defined a problem statement. 
     - Wrote down basic aim and functionality of the project.
     - Defined the basic components / interfaces in the project.
@@ -26,11 +26,11 @@ In Week 2 we worked on a shared  Github repository and shortlisted a project - A
     - Assigned multiple rules for defining Bugs in different categories - Critical, High, Medium and Low. 
     - Decided to use tests available in repo to check git functionality.
     - We decided on using instances to run tests for repository.
-    - Testing Dashboard also check the environments and dependency package issues. 
+    - Testing Dashboard also checks the environments and dependency package issues. 
 
 4. **Created POC Document based on Prototype made**
 
-    - Create Wireframes using Claude Design to develop a basic protoype.
+    - Created wireframes using Claude Design to develop a basic prototype.
     - Created a Prototype to understand the authentication and user workflow using Cursor.
     - The basic prototype consisted of two user roles - Admin and Developer, connected with a single git platform - GitHub and consisted of basic tests in Testing Dashboard such as checking for requirements.txt file. 
     - Created a [Proof of Concept](https://github.com/Soumyaa2005/Cognida1/blob/AI_Powered_Software_Agent/Rino_Documentation/POC1.md) document.
@@ -38,7 +38,7 @@ In Week 2 we worked on a shared  Github repository and shortlisted a project - A
 5. **Using GitHub repository as a shared space**
 
     - Learned how to raise a PR and its importance, resolved conflicts and also worked as a reviewer / assignee on a PR.
-    - Learned to a merge my branch - Sahasra_Reddy onto to the main branch. 
+    - Learned to a merge my branch - Sahasra_Reddy - onto to the main branch. 
     - Created a new branch for project - AI_Powered_Software_Agent
 
 ## Brief Summary
