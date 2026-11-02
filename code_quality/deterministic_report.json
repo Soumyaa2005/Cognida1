@@ -1,0 +1,10 @@
+{
+  "findings": [
+    {
+      "rule": "ERR",
+      "file": "load_model.py",
+      "line": 29,
+      "message": "Bare except catches unexpected exceptions and may hide errors."
+    }
+  ]
+}
