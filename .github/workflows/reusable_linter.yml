@@ -22,7 +22,7 @@ jobs:
           pip install pyyaml groq
 
       - name: Install Trivy
-        uses: aquasecurity/setup-trivy@v0.2.3
+        uses: aquasecurity/setup-trivy@v0.3.1
 
       - name: Check Python Syntax
         run: |
