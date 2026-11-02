@@ -1,5 +1,9 @@
 # Weekly Report - Week 2
 
+- Name: Rondla Sahasra Reddy 
+- Role: Intern
+- Mentor: Sai Kumar Yerra
+
 ## Brief Introduction
 In Week 2 we worked on a shared  Github repository and shortlisted a project - AI-Powered Software Agent, this project connects your application to the GitHub, it goes through users codebases, understands the project, its structure and finds bugs by running tests and providing few solutions such as generating code changes.
 
