@@ -38,7 +38,7 @@ This week, I mainly worked on understanding how the Code Quality Rules Engine ca
 
 - The idea is to have the script analyze the repository and provide an output listing the code quality and security issues it identifies.
 
-## 4. Key Outcomes
+## 3. Key Outcomes
 
 - Got a clearer idea of what the Code Quality Rules Engine should check.
 - Understood how deterministic checks and LLM-based analysis can work together.
