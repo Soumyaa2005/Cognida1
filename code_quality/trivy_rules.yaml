@@ -1,0 +1,43 @@
+
+version: 1
+
+trivy:
+  enabled: true
+
+  scanners:
+    - vuln
+    - misconfig
+    - secret
+
+  severity:
+    - CRITICAL
+    - HIGH
+    - MEDIUM
+    - LOW
+
+  ignore_paths:
+    - .venv/
+    - venv/
+    - node_modules/
+    - dist/
+    - build/
+    - __pycache__/
+    - vendor/
+    - migrations/
+
+  output:
+    format: json
+
+  fail_on_error: true
+
+  findings:
+    require_rule_id: true
+    require_file_path: true
+    include_severity: true
+    include_description: true
+    include_fix_version: true
+
+  actions:
+    create_github_issue: false
+    auto_fix: false
+    auto_create_pull_request: false

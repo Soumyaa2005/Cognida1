@@ -1,0 +1,58 @@
+name: Reusable Linter
+
+on:
+  workflow_call:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml groq
+
+      - name: Install Trivy
+        uses: aquasecurity/setup-trivy@v0.3.1
+
+      - name: Check Python Syntax
+        run: |
+          python -m py_compile code_quality/check_repo.py
+
+      - name: Run Code Quality Checker
+        run: |
+          python code_quality/check_repo.py .
+
+      - name: Generate CI Summary
+        if: always()
+        run: |
+          echo "## Rino Code Quality Report" >> $GITHUB_STEP_SUMMARY
+          if [ -f code_quality/deterministic_report.json ]; then
+            echo "### Deterministic Findings" >> $GITHUB_STEP_SUMMARY
+            python -c "import json; d=json.load(open('code_quality/deterministic_report.json')); print('Total:',len(d.get('findings',[])))" >> $GITHUB_STEP_SUMMARY
+          fi
+          if [ -f code_quality/ai_review_report.json ]; then
+            echo "### AI Review" >> $GITHUB_STEP_SUMMARY
+            python -c "import json; d=json.load(open('code_quality/ai_review_report.json')); print('Status:',d.get('status')); print('Findings:',len(d.get('findings',[])))" >> $GITHUB_STEP_SUMMARY
+          fi
+          if [ -f code_quality/trivy_report.json ]; then
+            echo "### Trivy Security Findings" >> $GITHUB_STEP_SUMMARY
+            python -c "import json; d=json.load(open('code_quality/trivy_report.json')); print('Total:',len(d.get('findings',[])))" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Upload Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: code-quality-reports
+          path: code_quality/*_report.json
+          if-no-files-found: warn

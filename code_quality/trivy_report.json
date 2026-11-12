@@ -1,0 +1,4364 @@
+{
+  "findings": [
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-41495",
+      "package": "numpy",
+      "installed_version": "1.18.5",
+      "fixed_version": "1.19",
+      "title": "numpy: NULL pointer dereference in numpy.sort in in the PyArray_DescrNew() due to missing return-value validation"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-33430",
+      "package": "numpy",
+      "installed_version": "1.18.5",
+      "fixed_version": "1.21",
+      "title": "numpy: buffer overflow in the PyArray_NewFromDescr_int() in ctors.c"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-34141",
+      "package": "numpy",
+      "installed_version": "1.18.5",
+      "fixed_version": "1.22",
+      "title": "numpy: incomplete string comparison in the numpy.core component"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41496",
+      "package": "numpy",
+      "installed_version": "1.18.5",
+      "fixed_version": "1.19",
+      "title": "numpy: buffer overflow in the array_from_pyobj() in fortranobject.c"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "GHSA-qr4w-53vh-m672",
+      "package": "opencv-python",
+      "installed_version": "4.4.0.44",
+      "fixed_version": "4.8.1.78",
+      "title": "opencv-python bundled libwebp binaries in wheels that are vulnerable to CVE-2023-4863"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "CRITICAL",
+      "id": "CVE-2021-41208",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Incomplete validation in boosted trees code"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "CRITICAL",
+      "id": "CVE-2023-25668",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-25668 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "CRITICAL",
+      "id": "GHSA-h6gw-r52c-724r",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "NULL Pointer Dereference and Access of Uninitialized Pointer in TensorFlow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2020-15265",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.4.0",
+      "title": "Segfault in `tf.quantization.quantize_and_dequantize`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-29591",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Stack overflow due to looping TFLite subgraph"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37635",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Heap out of bounds access in sparse reduction operations"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37637",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Null pointer dereference in `CompressElement`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37638",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Null pointer dereference in `RaggedTensorToTensor`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37639",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Null pointer dereference and heap OOB read in operations restoring tensors"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37643",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Null pointer dereference in `MatrixDiagPartOp`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37647",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Null pointer dereference in `SparseTensorSliceDataset`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37648",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Incorrect validation of `SaveV2` inputs"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37649",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Null pointer dereference in `UncompressElement`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37650",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Segfault and heap buffer overflow in `{Experimental,}DatasetToTFRecord`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37651",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Heap buffer overflow in `FractionalAvgPoolGrad`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37652",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Use after free in boosted trees creation"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37654",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Heap OOB and CHECK fail in `ResourceGather`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37655",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Heap OOB in `ResourceScatterUpdate`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37659",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Reference binding to nullptr and heap OOB in binary cwise ops"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37663",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Incomplete validation in `QuantizeV2`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37664",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Heap OOB in boosted trees"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37665",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Incomplete validation in MKL requantization"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37666",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Reference binding to nullptr in `RaggedTensorToVariant`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37667",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Reference binding to nullptr in unicode encoding"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37671",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Reference binding to nullptr in map operations"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37676",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Reference binding to nullptr in shape inference"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37678",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Arbitrary code execution due to YAML deserialization"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37679",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Heap OOB in nested `tf.map_fn` with `RaggedTensor`s"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37681",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "NPE in TFLite"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37688",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Null pointer dereference in TFLite"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-37689",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Null pointer dereference in TFLite MLIR optimizations"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-41201",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Unitialized access in `EinsumHelper::ParseEquation`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-41203",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Missing validation during checkpoint loading"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-41206",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Incomplete validation of shapes in multiple TF ops"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-41210",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Heap OOB read in `tf.raw_ops.SparseCountSparseOutput`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-41212",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Heap OOB read in `tf.ragged.cross`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-41214",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Reference binding to `nullptr` in `tf.ragged.cross`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-41219",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Undefined behavior via `nullptr` reference binding in sparse matrix multiplication"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2021-41221",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Access to invalid memory during shape inference in `Cudnn*` ops"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-21726",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Out of bounds read in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-21727",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Integer overflow in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-21728",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Out of bounds read in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-21729",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Overflow and uncaught divide by zero in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-21730",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Out of bounds read in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-21731",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Type confusion leading to segfault in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-21734",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "`CHECK`-failures in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-21735",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Division by zero in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-21736",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Undefined behavior in `SparseTensorSliceDataset`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-21737",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Assertion failure based denial of service in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-21738",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Integer overflow leading to crash in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-21739",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Null pointer dereference in TensorFlow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-21740",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Heap overflow in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-21741",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Division by zero in TFLite"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23557",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Division by zero in TFLite"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23558",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Integer overflow in TFLite array creation"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23559",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Integer overflow in TFLite"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23560",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Read and Write outside of bounds in TensorFlow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23561",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Out of bounds write in TFLite"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23562",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Integer overflow in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23563",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Insecure temporary file in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23564",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Reachable Assertion in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23565",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "`CHECK`-failures in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23566",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Out of bounds write in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23567",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Integer overflows in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23568",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Integer overflows in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23569",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "`CHECK`-fails when building invalid tensor shapes in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23570",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Null-dereference in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23571",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Reachable Assertion in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23572",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Crash when type cannot be specialized in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23573",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Uninitialized variable access in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23574",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Out of bounds read and write in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23575",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Integer overflow in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23576",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Integer overflow in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23577",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Null-dereference in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23584",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Use after free in `DecodePng` kernel"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23587",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Integer overflow in TensorFlow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-23591",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Stack overflow in TensorFlow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-29208",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Segfault and OOB write due to incomplete validation in `EditDistance` in TensorFlow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-29216",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Code injection in `saved_model_cli` in TensorFlow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-35937",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to OOB read in `Gather_nd` in TF Lite"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-35939",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to OOB write in `scatter_nd` in TF Lite"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-41894",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "CVE-2022-41894 affecting package tensorflow for versions less than 2.11.0-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-41900",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "CVE-2022-41900 affecting package tensorflow for versions less than 2.11.0-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2022-41902",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "Out of bounds write in grappler in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2023-25658",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-25658 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2023-25659",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-25659 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2023-25660",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-25660 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2023-25662",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-25662 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2023-25663",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-25663 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2023-25664",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-25664 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2023-25665",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-25665 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2023-25666",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-25666 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2023-25669",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-25669 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2023-25670",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-25670 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2023-25671",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-25671 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2023-25672",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-25672 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2023-25673",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-25673 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2023-25674",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-25674 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2023-25675",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-25675 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2023-25676",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-25676 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2023-25801",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-25801 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2023-27579",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-27579 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "CVE-2023-33976",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.12.1",
+      "title": "CVE-2023-33976 affecting package tensorflow for versions less than 2.11.1-2"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "HIGH",
+      "id": "GHSA-43q8-3fv7-pr5x",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Improper Validation of Integrity Check Value in TensorFlow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2020-15266",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.4.0",
+      "title": "Float cast overflow undefined behavior"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2020-26266",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "1.15.5, 2.0.4, 2.1.3, 2.2.2, 2.3.2",
+      "title": "Uninitialized memory access in TensorFlow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2020-26268",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "1.15.5, 2.0.4, 2.1.3, 2.2.2, 2.3.2",
+      "title": "Write to immutable memory region in TensorFlow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2020-26270",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "1.15.5, 2.0.4, 2.1.3, 2.2.2, 2.3.2",
+      "title": "CHECK-fail in LSTM with zero-length input in TensorFlow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2020-26271",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "1.15.5, 2.0.4, 2.1.3, 2.2.2, 2.3.2",
+      "title": "Heap out of bounds access in MakeEdge in TensorFlow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-29592",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Null pointer dereference in TFLite's `Reshape` operator"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-29601",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Integer overflow in TFLite concatentation"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-29605",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Integer overflow in TFLite memory allocation"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-29606",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap OOB read in TFLite"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-29607",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Incomplete validation in `SparseSparseMinimum`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-29608",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap OOB and null pointer dereference in `RaggedTensorToTensor`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-29609",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Incomplete validation in `SparseAdd`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-29613",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Incomplete validation in `tf.raw_ops.CTCLoss`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-29614",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Interpreter crash from `tf.io.decode_raw`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37636",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Floating point exception in `SparseDenseCwiseDiv`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37640",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Integer division by 0 in sparse reshaping"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37641",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Heap OOB in `RaggedGather`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37642",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Division by 0 in `ResourceScatterDiv`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37644",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "`std::abort` raised from `TensorListReserve`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37645",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.4.3, 2.5.1",
+      "title": "Integer overflow due to conversion to unsigned"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37646",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Bad alloc in `StringNGrams` caused by integer conversion"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37653",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Division by 0 in `ResourceGather`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37656",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Reference binding to nullptr in `RaggedTensorToSparse`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37657",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Reference binding to nullptr in `MatrixDiagV*` ops"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37658",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Reference binding to nullptr in `MatrixSetDiagV*` ops"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37660",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Division by 0 in inplace operations"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37661",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Crash caused by integer conversion to unsigned"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37662",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Reference binding to nullptr in boosted trees"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37668",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "FPE in `tf.raw_ops.UnravelIndex`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37669",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Crash in NMS ops caused by integer conversion to unsigned"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37670",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Heap OOB in `UpperBound` and `LowerBound`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37672",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Heap OOB in `SdcaOptimizerV2`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37673",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "`CHECK`-fail in `MapStage`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37674",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Incomplete validation in `MaxPoolGrad`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37675",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Division by 0 in most convolution operators"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37677",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Missing validation in shape inference for `Dequantize`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37680",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Division by zero in TFLite"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37682",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Use of unitialized value in TFLite"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37683",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "FPE in TFLite division operations"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37684",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "FPE in TFLite pooling operations"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37685",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Heap OOB in TFLite"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37687",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Heap OOB in TFLite's `Gather*` implementations"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37690",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "Use after free and segfault in shape inference functions"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-37691",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.4, 2.4.3, 2.5.1",
+      "title": "FPE in LSH in TFLite"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41195",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Crash in `tf.math.segment_*` operations"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41196",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Crash in `max_pool3d` when size argument is 0 or negative"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41197",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Crashes due to overflow and `CHECK`-fail in ops with large tensor shapes"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41198",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Overflow/crash in `tf.tile` when tiling tensor is large"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41199",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Overflow/crash in `tf.image.resize` when size is large"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41200",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Incomplete validation in `tf.summary.create_file_writer`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41202",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Overflow/crash in `tf.range`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41204",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Segfault while copying constant resource tensor"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41205",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Heap OOB read in all `tf.raw_ops.QuantizeAndDequantizeV*` ops"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41207",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "FPE in `ParallelConcat`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41209",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "FPE in convolutions with zero size filters"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41213",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Deadlock in mutually recursive `tf.function` objects"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41215",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Null pointer exception in `DeserializeSparse`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41216",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Heap buffer overflow in `Transpose`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41217",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Null pointer exception when `Exit` node is not preceded by `Enter` op"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41218",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Integer division by 0 in `tf.raw_ops.AllToAll`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41222",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Segfault due to negative splits in `SplitV`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41223",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Heap OOB in `FusedBatchNorm` kernels"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41224",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "`SparseFillEmptyRows` heap OOB"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41225",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "A use of uninitialized value vulnerability in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41226",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Heap OOB in `SparseBinCount`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41227",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.1, 2.5.2, 2.4.4",
+      "title": "Arbitrary memory read in `ImmutableConst`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2021-41228",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.2, 2.4.4, 2.6.1",
+      "title": "Code injection in `saved_model_cli`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-21725",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Division by zero in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-21732",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Memory exhaustion in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-21733",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Memory exhaustion in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-23578",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Memory leak in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-23579",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "`CHECK`-failures during Grappler's `SafeToRemoveIdentity` in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-23580",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Abort caused by allocating a vector that is too large in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-23581",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "`CHECK`-failures during Grappler's `IsSimplifiableReshape` in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-23582",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "`CHECK`-failures in `TensorByteSize` in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-23583",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "`CHECK`-failures in binary ops in Tensorflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-23585",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Memory leak in decoding PNG images"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-23586",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Multiple `CHECK`-fails in `function.cc` in TensowFlow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-23588",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "`CHECK`-fails due to attempting to build a reference tensor"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-23589",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Null pointer dereference in Grappler's `IsConstant`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-23590",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.1",
+      "title": "Crash due to erroneous `StatusOr` in TensorFlow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-23595",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Null pointer dereference in TensorFlow "
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29191",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Missing validation causes denial of service via `GetSessionTensor`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29192",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Missing validation crashes `QuantizeAndDequantizeV4Grad`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29193",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Missing validation causes `TensorSummaryV2` to crash"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29194",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Missing validation causes denial of service via `DeleteSessionTensor`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29195",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Missing validation causes denial of service via `StagePeek`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29196",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Missing validation causes denial of service via `Conv3DBackpropFilterV2`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29197",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Missing validation causes denial of service via `UnsortedSegmentJoin`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29198",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Missing validation causes denial of service via `SparseTensorToCSRSparseMatrix`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29199",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Missing validation causes denial of service via `LoadAndRemapMatrix`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29200",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Missing validation causes denial of service via `LSTMBlockCell`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29201",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Missing validation results in undefined behavior in `QuantizedConv2D`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29202",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Denial of service in `tf.ragged.constant` due to lack of validation"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29203",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Integer overflow in `SpaceToBatchND`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29204",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Missing validation causes denial of service via `Conv3DBackpropFilterV2`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29205",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Segfault due to missing support for quantized types"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29206",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Missing validation results in undefined behavior in `SparseTensorDenseAdd"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29207",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Undefined behavior when users supply invalid resource handles"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29209",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Type confusion leading to `CHECK`-failure based denial of service in TensorFlow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29211",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Segfault if `tf.histogram_fixed_width` is called with NaN values in TensorFlow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29212",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Core dump when loading TFLite models with quantization in TensorFlow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-29213",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "Incomplete validation in signal ops leads to crashes in TensorFlow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35934",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` failure in tf.reshape via overflows"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35935",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` failure in `SobolSample` via missing validation"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35940",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to Int overflow in `RaggedRangeOp`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35941",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.2",
+      "title": "TensorFlow vulnerable to `CHECK` failure in `AvgPoolOp`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35952",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` failures in `UnbatchGradOp`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35959",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` failures in `AvgPool3DGrad`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35960",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` failure in `TensorListReserve` via missing validation"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35963",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` failures in `FractionalAvgPoolGrad`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35964",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to segfault in `BlockLSTMGradV2`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35965",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to segfault in `LowerBound` and `UpperBound`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35966",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to segfault in `QuantizedAvgPool`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35967",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to segfault in `QuantizedAdd`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35968",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `AvgPoolGrad`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35969",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `Conv2DBackpropInput`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35970",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to segfault in `QuantizedInstanceNorm`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35971",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": " TensorFlow vulnerable to `CHECK` fail in `FakeQuantWithMinMaxVars`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35972",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to segfault in `QuantizedBiasAdd`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35973",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to segfault in `QuantizedMatMul`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35974",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to segfault in `QuantizeDownAndShrinkRange`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35979",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to segfault in `QuantizedRelu` and `QuantizedRelu6`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35981",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `FractionalMaxPoolGrad`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35982",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to segfault in `SparseBincount`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35983",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `Save` and `SaveSlices`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35984",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `ParameterizedTruncatedNormal`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35985",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `LRNGrad`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35986",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": " TensorFlow vulnerable to segfault in `RaggedBincount`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35987",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `DenseBincount`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35988",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `tf.linalg.matrix_rank`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35989",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": " TensorFlow vulnerable to `CHECK` fail in `MaxPool`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35990",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": " TensorFlow vulnerable to `CHECK` fail in `FakeQuantWithMinMaxVarsPerChannelGradient`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35991",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `TensorListScatter` and `TensorListScatterV2`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35992",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `TensorListFromTensor`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35993",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `SetSize`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35994",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `CollectiveGather`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35995",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `AudioSummaryV2`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35996",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to floating point exception in `Conv2D`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35997",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `tf.sparse.cross`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35998",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `EmptyTensorList`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-35999",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `Conv2DBackpropInput`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-36000",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to null dereference on MLIR on empty function attributes"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-36001",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `DrawBoundingBoxes`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-36002",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `Unbatch`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-36003",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `RandomPoissonV2`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-36004",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `tf.random.gamma`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-36005",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `FakeQuantWithMinMaxVarsGradient`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-36011",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to null dereference on MLIR on empty function attributes"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-36012",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to assertion fail on MLIR empty edge names"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-36013",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to null-dereference in `mlir::tfg::GraphDefImporter::ConvertNodeDef`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-36014",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to null-dereference in `mlir::tfg::TFOp::nameAttr`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-36017",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to segfault in `Requantize`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-36018",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `RaggedTensorToVariant`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-36019",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `FakeQuantWithMinMaxVarsPerChannel`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-36026",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK` fail in `QuantizeAndDequantizeV3`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-36027",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": " TensorFlow segfault TFLite converter on per-channel quantized transposed convolutions"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41880",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.10.1, 2.8.4, 2.9.3",
+      "title": "CVE-2022-41880 affecting package tensorflow for versions less than 2.11.0-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41884",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "CVE-2022-41884 affecting package tensorflow for versions less than 2.11.0-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41885",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.4, 2.8.1, 2.9.1",
+      "title": "Overflow in `FusedResizeAndPadConv2D`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41886",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "CVE-2022-41886 affecting package tensorflow for versions less than 2.11.0-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41887",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.9.3, 2.10.1",
+      "title": "Overflow in `tf.keras.losses.poisson`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41888",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "CVE-2022-41888 affecting package tensorflow for versions less than 2.11.0-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41889",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "CVE-2022-41889 affecting package tensorflow for versions less than 2.11.0-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41890",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "CVE-2022-41890 affecting package tensorflow for versions less than 2.11.0-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41891",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "CVE-2022-41891 affecting package tensorflow for versions less than 2.11.0-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41893",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "CVE-2022-41893 affecting package tensorflow for versions less than 2.11.0-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41895",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "CVE-2022-41895 affecting package tensorflow for versions less than 2.11.0-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41896",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "CVE-2022-41896 affecting package tensorflow for versions less than 2.11.0-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41897",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "CVE-2022-41897 affecting package tensorflow for versions less than 2.11.0-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41898",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "CVE-2022-41898 affecting package tensorflow for versions less than 2.11.0-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41899",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "CVE-2022-41899 affecting package tensorflow for versions less than 2.11.0-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41901",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "CVE-2022-41901 affecting package tensorflow for versions less than 2.11.0-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41907",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "CVE-2022-41907 affecting package tensorflow for versions less than 2.11.0-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41908",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "CVE-2022-41908 affecting package tensorflow for versions less than 2.11.0-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41909",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "CVE-2022-41909 affecting package tensorflow for versions less than 2.11.0-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41910",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "Heap overflow in `QuantizeAndDequantizeV2`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2022-41911",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "CVE-2022-41911 affecting package tensorflow for versions less than 2.11.0-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2023-25661",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-25661 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "CVE-2023-25667",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.11.1",
+      "title": "CVE-2023-25667 affecting package tensorflow for versions less than 2.11.1-1"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "GHSA-mw6j-hh29-h379",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.6.4, 2.7.2, 2.8.1",
+      "title": "`CHECK` failure in depthwise ops via overflows"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "MEDIUM",
+      "id": "GHSA-wcv5-vrvr-3rx2",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.5.3, 2.6.3, 2.7.1",
+      "title": "Integer Overflow or Wraparound in TensorFlow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2020-26267",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "1.15.5, 2.0.4, 2.1.3, 2.2.2, 2.3.2",
+      "title": "Lack of validation in data format attributes in TensorFlow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29512",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.3, 2.4.2",
+      "title": "Heap buffer overflow in `RaggedBinCount`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29513",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Type confusion during tensor casts lead to dereferencing null pointers"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29514",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.3, 2.4.2",
+      "title": "Heap out of bounds write in `RaggedBinCount`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29515",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Reference binding to null pointer in `MatrixDiag*` ops"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29516",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Null pointer dereference via invalid Ragged Tensors"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29517",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by zero in `Conv3D`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29518",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Session operations in eager mode lead to null pointer dereferences"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29519",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "CHECK-fail in SparseCross due to type confusion"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29520",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap buffer overflow in `Conv3DBackprop*`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29521",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.3, 2.4.2",
+      "title": "Segfault in SparseCountSparseOutput"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29522",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by 0 in `Conv3DBackprop*`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29523",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "CHECK-fail in AddManySparseToTensorsMap"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29524",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by 0 in `Conv2DBackpropFilter`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29525",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by 0 in `Conv2DBackpropInput`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29526",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by 0 in `Conv2D`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29527",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by 0 in `QuantizedConv2D`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29528",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by 0 in `QuantizedMul`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29529",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap buffer overflow caused by rounding"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29530",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Invalid validation in `SparseMatrixSparseCholesky`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29531",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "CHECK-fail in tf.raw_ops.EncodePng"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29532",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap out of bounds read in `RaggedCross`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29533",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "CHECK-fail in DrawBoundingBoxes"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29534",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "CHECK-fail in SparseConcat"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29535",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap buffer overflow in `QuantizedMul`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29536",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap buffer overflow in `QuantizedReshape`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29537",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap buffer overflow in `QuantizedResizeBilinear`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29538",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by zero in `Conv2DBackpropFilter`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29539",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Segfault in tf.raw_ops.ImmutableConst"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29540",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap buffer overflow in `Conv2DBackpropFilter`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29541",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Null pointer dereference in `StringNGrams`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29542",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap buffer overflow in `StringNGrams`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29543",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "CHECK-fail in `CTCGreedyDecoder`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29545",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap buffer overflow in `SparseTensorToCSRSparseMatrix`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29546",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by 0 in `QuantizedBiasAdd`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29547",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap out of bounds in `QuantizedBatchNormWithGlobalNormalization`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29548",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by 0 in `QuantizedBatchNormWithGlobalNormalization`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29549",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by 0 in `QuantizedAdd`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29550",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by 0 in `FractionalAvgPool`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29551",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "OOB read in `MatrixTriangularSolve`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29552",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "CHECK-failure in `UnsortedSegmentJoin`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29553",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap OOB in `QuantizeAndDequantizeV3`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29554",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.3, 2.4.2",
+      "title": "Division by 0 in `DenseCountSparseOutput`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29555",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by 0 in `FusedBatchNorm`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29556",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by 0 in `Reverse`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29557",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by 0 in `SparseMatMul`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29558",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap buffer overflow in `SparseSplit`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29559",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap OOB access in unicode ops"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29560",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap buffer overflow in `RaggedTensorToTensor`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29561",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "CHECK-fail in `LoadAndRemapMatrix`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29562",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "CHECK-fail in `tf.raw_ops.IRFFT`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29563",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "CHECK-fail in `tf.raw_ops.RFFT`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29564",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Null pointer dereference in `EditDistance`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29565",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Null pointer dereference in `SparseFillEmptyRows`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29566",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap OOB access in `Dilation2DBackpropInput`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29567",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Lack of validation in `SparseDenseCwiseMul`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29568",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Reference binding to null in `ParameterizedTruncatedNormal`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29569",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap out of bounds read in `RequantizationRange`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29570",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap out of bounds read in `MaxPoolGradWithArgmax`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29571",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Memory corruption in `DrawBoundingBoxesV2`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29572",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Reference binding to nullptr in `SdcaOptimizer`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29573",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by 0 in `MaxPoolGradWithArgmax`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29574",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Undefined behavior in `MaxPool3DGradGrad`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29575",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Overflow/denial of service in `tf.raw_ops.ReverseSequence`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29576",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap buffer overflow in `MaxPool3DGradGrad`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29577",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap buffer overflow in `AvgPool3DGrad`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29578",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap buffer overflow in `FractionalAvgPoolGrad`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29579",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap buffer overflow in `MaxPoolGrad`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29580",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Undefined behavior and `CHECK`-fail in `FractionalMaxPoolGrad`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29581",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Segfault in `CTCBeamSearchDecoder`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29582",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap OOB read in `tf.raw_ops.Dequantize`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29583",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap buffer overflow and undefined behavior in `FusedBatchNorm`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29584",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "CHECK-fail due to integer overflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29585",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by zero in padding computation in TFLite"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29586",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by zero in optimized pooling implementations in TFLite"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29587",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by zero in TFLite's implementation of `SpaceToDepth`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29588",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by zero in TFLite's implementation of `TransposeConv`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29589",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by zero in TFLite's implementation of `GatherNd`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29590",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap OOB read in TFLite's implementation of `Minimum` or `Maximum`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29593",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by zero in TFLite's implementation of `BatchToSpaceNd`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29594",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by zero in TFLite's convolution code"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29595",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by zero in TFLite's implementation of `DepthToSpace`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29596",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by zero in TFLite's implementation of `EmbeddingLookup`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29597",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by zero in TFLite's implementation of `SpaceToBatchNd`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29598",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by zero in TFLite's implementation of `SVDF`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29599",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by zero in TFLite's implementation of Split"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29600",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by zero in TFLite's implementation of `OneHot`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29602",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by zero in TFLite's implementation of `DepthwiseConv`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29603",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap OOB write in TFLite"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29604",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Division by zero in TFLite's implementation of hashtable lookup"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29610",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Invalid validation in `QuantizeAndDequantizeV2`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29611",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.3.3, 2.4.2",
+      "title": "Incomplete validation in `SparseReshape`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29612",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Heap buffer overflow in `BandedTriangularSolve`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29615",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Stack overflow in `ParseAttrValue` with nested tensors"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29616",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Null dereference in Grappler's `TrySimplify`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29617",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Crash in `tf.strings.substr` due to `CHECK`-fail"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29618",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Crash in `tf.transpose` with complex inputs"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2021-29619",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.1.4, 2.2.3, 2.3.3, 2.4.2",
+      "title": "Segfault in `tf.raw_ops.SparseCountSparseOutput`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2022-36015",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to integer overflow in math ops"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "CVE-2022-36016",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.7.2, 2.8.1, 2.9.1",
+      "title": "TensorFlow vulnerable to `CHECK`-fail in `tensorflow::full_type::SubstituteFromAttrs`"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "GHSA-cqvq-fvhr-v6hc",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "`CHECK` failure in `SobolSample` via missing validation"
+    },
+    {
+      "type": "vulnerability",
+      "target": "requirements.txt",
+      "severity": "LOW",
+      "id": "GHSA-xf83-q765-xm6m",
+      "package": "tensorflow",
+      "installed_version": "2.3.1",
+      "fixed_version": "2.8.4, 2.9.3, 2.10.1",
+      "title": "`CHECK` fail in `TensorListScatter` and `TensorListScatterV2` in eager mode"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "CRITICAL",
+      "id": "GHSA-6q48-6c7w-9gw2",
+      "package": "certifi",
+      "installed_version": "2026.7.22",
+      "fixed_version": "2026.10.18",
+      "title": "certifi bundles emSign root CAs with compromised intermediate CA keys"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "CRITICAL",
+      "id": "CVE-2026-112393",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: Pillow: Heap buffer overflow in _tiffWriteProc when saving TIFF to BytesIO"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "CRITICAL",
+      "id": "CVE-2026-112398",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: Pillow: Heap buffer overflow in FlashPix (FPX) JPEG decoding leads to code execution"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "CRITICAL",
+      "id": "CVE-2026-112403",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: Pillow: Heap buffer overflow in ImagingJpegDecode"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "CRITICAL",
+      "id": "CVE-2026-112900",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: Pillow: Argument Injection in Ghostscript call, potentially leading into RCE"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "CRITICAL",
+      "id": "CVE-2026-96639",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "Pillow is a Python imaging library. From 11.0.0 until 13.0.0, multi-fr ..."
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-112390",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: Pillow: Denial of Service via infinite loop during crafted MIC image parsing"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-112392",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Denial of Service via zero-size images in rank filters"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-112397",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Denial of Service via out-of-bounds memory access on zero-width images"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-112399",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Denial of service via crafted APNG image"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-112400",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Denial of Service via memory exhaustion from crafted GIF image"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-112402",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Denial of service via double free during image transformation"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-112404",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: Pillow: Denial of Service via out-of-bounds read in TIFF decoding"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-112405",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: Pillow: Denial of Service via null pointer dereference in Image.merge()"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-112406",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Denial of Service via infinite loop during PDF page rewriting"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-112892",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Denial of Service via unbounded memory expansion in MSP image decoder"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-112893",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: Pillow: Denial of Service via invalid pointer free during font rendering"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-112894",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Denial of Service via crafted multi-frame image conversion"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-112895",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Denial of service via crafted PDF during append operations"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-112896",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: Pillow: Denial of Service via out-of-bounds read in TIFF encoder"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-112897",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Information disclosure via uninitialized buffer in TIFF decoding"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-112902",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": " Pillow: Memory disclosure and segfault in libtiff encoder via crafted TIFF tags"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-96637",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Denial of Service via decompression bomb bypass in SPIDER images"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-96640",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Denial of Service via duplicate page references in PDF files"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-96642",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: Pillow: Denial of Service via negative archive member size in TarIO"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-96643",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Denial of Service via repeated EXIF headers"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-96644",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: Pillow: Denial of Service via out-of-bounds read in metafile parser"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "CVE-2026-96778",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Arbitrary code execution via JPEG encoder buffer overflow"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "HIGH",
+      "id": "GHSA-78g4-xqwv-q3g8",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "Pillow: Bundled libopenjp2 2.5.4 in all wheels since 11.1.0 carries OSV-2025-219 heap-buffer-overflow write reachable from Image.open().load()"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "MEDIUM",
+      "id": "CVE-2026-112391",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: Pillow: Denial of Service via unbounded recursion in PDF parser"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "MEDIUM",
+      "id": "CVE-2026-112394",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Information disclosure via out-of-bounds read in raw decoders"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "MEDIUM",
+      "id": "CVE-2026-112395",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Information disclosure via crafted tiled TIFF image"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "MEDIUM",
+      "id": "CVE-2026-112396",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: arbitrary code execution via heap use-after-free during TIFF encoding"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "MEDIUM",
+      "id": "CVE-2026-112401",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Denial of Service via crafted GIF comments"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "MEDIUM",
+      "id": "CVE-2026-112891",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Denial of Service via large GIF comments"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "MEDIUM",
+      "id": "CVE-2026-112898",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: Pillow: Information disclosure via empty palette quantization"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "MEDIUM",
+      "id": "CVE-2026-112899",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "Pillow: EPS load(scale) lets Ghostscript render past the decompression bomb limit"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "MEDIUM",
+      "id": "CVE-2026-112901",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: Pillow: Denial of Service via crafted XBM image header"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "MEDIUM",
+      "id": "CVE-2026-114501",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: Pillow: Information disclosure via improper memory alignment during Arrow export"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "MEDIUM",
+      "id": "CVE-2026-96636",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Denial of Service via decompression bomb check bypass in multi-frame images"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "MEDIUM",
+      "id": "CVE-2026-96638",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Denial of Service via crafted RLE BMP image"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "MEDIUM",
+      "id": "CVE-2026-96641",
+      "package": "pillow",
+      "installed_version": "12.3.0",
+      "fixed_version": "13.0.0",
+      "title": "pillow: pillow: Denial of Service via integer overflow in text-width calculation"
+    },
+    {
+      "type": "vulnerability",
+      "target": "uv.lock",
+      "severity": "LOW",
+      "id": "GHSA-xmj3-9gf7-h52w",
+      "package": "setuptools",
+      "installed_version": "84.0.0",
+      "fixed_version": "84.1.0",
+      "title": "setuptools: Windows path escape via namespace_packages.txt during legacy wheel installation  Description"
+    }
+  ]
+}
