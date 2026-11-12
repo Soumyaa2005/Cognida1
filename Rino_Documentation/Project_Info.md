@@ -351,3 +351,441 @@ AZURE_DEVOPS_REDIRECT_URI=http://localhost:3001/api/auth/azure-devops/callback
 **Important:** These environment variable names are a proposed convention. Your backend code must read the same names, and the callback URLs must match the routes you implement and register with each provider.
 
 Never commit `.env` to GitHub. Add it to `.gitignore` and store production credentials in your deployment platform's environment variables or secret manager.
+
+
+## Context Engine with Workflow
+```mermaid
+flowchart TD
+    A["Admin connects repo (GitHub App)"] --> C["Clone at commit (token removed)"]
+    C --> D["Repository scanner"]
+    D --> E["Python version and dependencies"]
+    D --> G["Test discovery + CI workflow/script"]
+    E --> N["Test environment (admin confirms)"]
+    G --> N
+ 
+    N --> O["Fresh Docker container"]
+    O --> Q["Install dependencies"]
+    Q --> Q2["Cut network"]
+    Q2 --> R["Run tests (pytest)"]
+    R --> R2["Re-run failures (flaky check)"]
+    O --> L1["pylint + bandit"]
+    C --> L2["Trivy scan"]
+ 
+    R2 --> V["Triage rules engine"]
+    L1 --> V
+    L2 --> V
+ 
+    V --> H["Context engine (chunks, repo map, grep)"]
+    H --> K["AI explains each finding"]
+    K -->|needs more code| H
+ 
+    K --> AA["Findings on dashboard"]
+    AA -->|Critical| GI["GitHub Issue (developer confirms)"]
+    AA --> AB["AI suggests fix"]
+    AB --> VF["Verify fix in new sandbox"]
+    VF --> AC["Developer approves"]
+    AC --> PR["Draft PR"]
+ 
+    O -.->|always| CL["Remove container"]
+```
+This is the context spec for Rino's harness. The numbers are my proposals, since only the 5-call cap and the 40k budget exist in code today. The rest should be tuned from real traces.
+ 
+Stages A to C and the sections after them describe v1. The last section covers the final version for large repos.
+ 
+### Stage A: pre-load (no model calls)
+ 
+For each finding, the harness gathers these in priority order. When the budget runs short, the lowest priority is dropped first.
+ 
+| # | What | Limit | Why |
+| --- | --- | --- | --- |
+| 1 | The finding's own evidence: traceback, test output, lint message, file and line | 3k tokens | Ground truth. It's what actually happened |
+| 2 | The target function in full (the one the error points into) | 2k, else the signature plus lines around the error | The code being explained |
+| 3 | Tests that exercise it | up to 2, 1.5k each | They show the intended behaviour |
+| 4 | Direct callers and callees | up to 3 each, 800 tokens each | The code most likely to be affected |
+| 5 | File header: module docstring and imports | 500 | Where names come from |
+| 6 | Scoped repo map: signatures only, for the target's folder and the callers' folders | 3k | Overall picture, at about a tenth of the cost of full code |
+| 7 | Project notes: an optional RINO.md, or the README's conventions | 1k | The team's own rules |
+| 8 | Recent history: last 3 commit messages touching the file | 300 | Hints at why the code looks this way |
+ 
+Target: about 15k tokens pre-loaded. The hard ceiling for the whole conversation is 40k.
+ 
+The recipe changes with the finding type:
+ 
+| Finding type | What step 1-2 become |
+| --- | --- |
+| Failing test | The traceback, the deepest product frame, and the function the assertion called |
+| pylint error | The flagged line and its function; for undefined names, where the name should come from |
+| bandit | The flagged line, plus how the value flows in (for example, where the SQL string's input comes from) |
+| Collection or syntax error | The file around the error line; the files that import it |
+| Dependency CVE (Trivy) | The dependency file line, and where the package is imported in the code |
+| Flaky test | The test, the re-run results, anything it touches outside itself (time, files, network) |
+ 
+### Stage B: the tool loop (at most 5 calls)
+ 
+The model gets read-only tools. These five are the proposed set:
+ 
+| Tool | Does | Output limit |
+| --- | --- | --- |
+| get_function(path, name) | Returns one whole function | 1.5k tokens |
+| read_file(path, start, end) | Returns up to 120 lines | 1.5k tokens |
+| grep(pattern, path) | Regex search | 30 matches |
+| find_references(symbol) | Callers by name, narrowed by imports | 20 results |
+| list_dir(path) | Lists a folder | 100 entries |
+ 
+The script has only read_file, grep and list_dir. get_function and find_references are new, and they matter because they replace several read_file or grep calls with one.
+ 
+What the prompt tells the model to spend calls on:
+ 
+1. Where an unknown name is defined.
+2. Who calls the function, if that affects the explanation.
+3. Config or constants the function depends on.
+ 
+The prompt only guides this. The count is enforced in code.
+ 
+### Stage C: stop and verify
+ 
+- Limits: 5 calls or 40k tokens. After either, the model is forced to submit.
+- Every call counts, including refused ones and parallel ones.
+- Output check: quoted code must exist in the file, the line must be in range, and the severity must be unchanged.
+- If anything fails: the finding still shows with its rule-based details and "no explanation available".
+ 
+### Budget by severity
+ 
+Higher severity earns more effort, because a wrong explanation costs more there. This is my proposal and the numbers are guesses to tune.
+ 
+| Severity | Tool calls | Token budget |
+| --- | --- | --- |
+| Critical | 8 | 60k |
+| High | 5 | 40k |
+| Medium | 3 | 25k |
+| Low | 1 | 15k |
+ 
+This also controls cost, because most findings are Medium or Low.
+ 
+### What to log per finding
+ 
+Calls used, tokens used (estimated and, from the API, actual), which tools, whether any output was truncated, whether the limit forced the finish, and whether validation dropped anything. After a few hundred findings, this tells you whether the caps are right.
+ 
+### Where it runs
+ 
+On the worker, after triage. One change is needed: Rino currently deletes the checkout when the run ends. It must keep the checkout until all findings are explained, since the tools read from it. Then it deletes it.
+ 
+### Final version: large repos
+ 
+The final version keeps Stages A to C and the per-finding limits. What changes is how context is found: from scanning the repo on every run to looking it up in a stored index. The per-finding budget stays the same size whether the repo has 5,000 lines or 5 million.
+ 
+### What changes from v1
+ 
+| Area | v1 | Final version |
+| --- | --- | --- |
+| Index | Function index rebuilt in memory on every run with ast | Stored per commit. Each file is hashed and only changed files are re-parsed |
+| Chunks | Not stored | Function-level chunks stored with commit, path, symbol and line range |
+| Callers | Found by function name | A symbol index built from imports, so find_references follows real references |
+| Repo map | Cut at a fixed size | Built from the index and scoped to the finding's folder and its callers' folders |
+| Search | grep (exact) | grep, keyword search and optional embedding search, merged by rank |
+| Explanations | Every finding, up front | Critical and High up front; Medium and Low when someone opens them |
+| Run scope | Whole repo | Admin-chosen folders; only tests related to the change; scans limited to changed files on a PR |
+| Clone | Full checkout kept until explanations finish | Shallow clone or tarball, vendored and generated folders skipped |
+| Languages | Python (ast) | Python first, then other languages through tree-sitter |
+ 
+### The two phases
+ 
+1. Index, once per commit, in the background and alongside install and tests: clone, hash the files, chunk the changed files by function, and store the chunks, symbols and import graph in Postgres (plus embeddings if enabled, cached by chunk hash).
+2. Per finding: retrieve from the index, pack to the token budget, run the model loop, then validate.
+ 
+### Tools in the final version
+ 
+The five v1 tools stay. One optional tool is added: search_code(query), which finds code by meaning. It counts toward the same call cap, and it is added only if testing shows it finds the right function more often than grep and find_references do.
+ 
+### Limits for large repos
+ 
+- A maximum repo size or file count, with a clear message when it is exceeded.
+- A run timeout that returns partial results and says so, instead of failing silently.
+- A cap on explanations per run, taken from the highest severity down.
+- Embeddings are computed once per chunk hash, so unchanged code is never embedded twice.
+- The exact numbers are set from measurements on a large repo, not guessed.
+ 
+### Build order
+ 
+1. v1 as described above.
+2. The stored index and the symbol index.
+3. The scoped repo map and on-demand explanations for Medium and Low.
+4. search_code with embeddings, if the test shows a gain.
+5. More languages.
+ 
+### How to check that it scales
+ 
+Run it on one large open-source repo and measure four things: index time for a fresh repo, re-index time after a one-file change, tokens used per finding, and how often the right function appears in the top 5 results.
+## Code Review Agent Workflow using harness
+```mermaid
+flowchart TD
+    A["PR Diff"] --> B["Review Agent"]
+    B --> C["Understand the Change"]
+    C --> D["Request Relevant Context"]
+    D --> E["Inspect Related Code"]
+    E --> F["Inspect Tests"]
+    F --> G["Analyze Behavior"]
+    G --> H{"Potential Issue?"}
+
+    H -->|No| I["Continue Review"]
+    H -->|Yes| J["Collect Evidence"]
+    J --> K["Run / Request Tests"]
+    K --> L["Validate Finding"]
+    L --> M["Generate Review Finding"]
+```
+
+Building a custom code review agent harness from scratch comes down to creating a deterministic wrapper around a non-deterministic LLM. Rather than dumping an entire pull request into a single prompt, a proper harness lets the model actively investigate the codebase, verify its findings, and output structured feedback.
+ 
+### 1. Core Harness Architecture
+ 
+A custom harness consists of five distinct components working together:
+ 
+* **Context & Trigger Layer:** Captures the pull request event (via GitHub Actions, GitLab CI, or a local git hook) and extracts the initial git diff and PR metadata.
+* **Read-Only Toolset:** Gives the LLM safe, sandboxed tools to inspect the repository (`read_file`, `search_code`, `get_git_blame`, `run_linter`) without risking accidental edits.
+* **The Agent Loop:** Manages the while loop of sending messages, executing requested tool calls, appending tool outputs, and enforcing strict iteration limits.
+* **Verification & Filtering (Sensors):** Drops hallucinated line numbers, filters out low-confidence nitpicks, and formats findings into inline PR comments.
+* **Structured Output Schema:** Forces the final review into predictable JSON (file path, line number, severity, and actionable fix) so your CI pipeline can post it cleanly via API.
+ 
+### 2. Minimal Python Reference Implementation
+ 
+You can build a working review harness in ~100 lines of Python using standard tool-calling patterns. Below is a framework-agnostic blueprint using the `openai` SDK (compatible with OpenAI, Anthropic via adapter, or local vLLM/Ollama endpoints):
+ 
+The above code is dependent on the following open source tools:
+ 
+* **The `openai` Python Library (`from openai import OpenAI`):** This is an external third-party package installed via pip. While it connects to OpenAI's proprietary API, the Python SDK itself, along with its underlying dependencies like `httpx`, `pydantic`, and `anyio`, is open-source software (licensed under Apache 2.0 / MIT).
+* **The `git` CLI (`["git", "grep", ...]`):** The `grep_codebase` tool shells out to the `git` binary on your operating system, which is open-source software (GPLv2).
+* **Python Runtime:** Python itself is open-source, though `subprocess` and `json` are built directly into its standard library.
+
+[Python file with using open source tools](./resources/review_agent_with_open_source_tools.py)
+### Building it without using open source tools
+ 
+This complete script runs on pure Python 3 standard library with zero external installations (`pip install` is not required): 
+
+[Python file without using open source tools](./resources/review_agent_without_open_source_tools.py)
+
+
+## Harness and Sandbox
+```mermaid
+flowchart TD
+    A["GitHub PR / Repository"] --> B["RINO API"]
+    
+    B --> C["Review Harness"]
+    
+    C --> D["Context Engine"]
+    C --> E["Review Agent"]
+    
+    C --> F["Sandbox Manager"]
+    
+    F --> G["Fresh Isolated Sandbox"]
+    G --> H["Clone Repository"]
+    H --> I["Install Dependencies"]
+    I --> J["Run Tests"]
+    J --> K["Collect Results"]
+    
+    K --> C
+    
+    D --> E
+    E --> L{"Need more context?"}
+    
+    L -->|Yes| D
+    L -->|No| M["Generate Findings"]
+    
+    M --> N["Validate Findings"]
+    N --> O["GitHub PR Comments"]
+    N --> P["RINO Dashboard"]
+```
+
+## R-A-G and  Chunking 
+```mermaid
+flowchart TD
+
+    A["Finding arrives"] --> B["RETRIEVE (before the AI)<br/>function, tests, callers, map<br/>+ optional: similar code by meaning (RAG)"]
+
+    B --> C["Prompt = rules + finding + retrieved code"]
+
+    C --> D["AI reads it"]
+
+    D --> E{"Needs more?"}
+
+    E -->|Yes| F["RETRIEVE again (tool call, max 5)<br/>read_file, grep, find_references<br/>+ optional: search_code by meaning (RAG)"]
+
+    F --> D
+
+    E -->|No| G["AI writes the explanation"]
+
+    G --> H["Harness checks it"]
+ ```
+
+
+### Decision
+
+- Chunk code by function using Python’s `ast` module.
+- Retrieve with exact symbol and keyword search first.
+- Embedding search is optional. Add it only if testing shows it beats the exact methods.
+
+### How RAG fits
+
+- RAG means retrieving relevant material and giving it to the model before it answers.
+- Retrieval happens twice in the harness. The first is the pre-load, before the AI: the finding’s evidence, the function, its tests, its callers and callees, and a scoped repo map. The second is the tool calls, during the AI’s work: `read_file`, `grep` and `find_references`, up to the call cap, plus an optional `search_code` that finds code by meaning.
+- Only the embedding part is optional. Everything else works without it.
+
+### Chunking
+
+- AST is a tree that Python builds from the code. A function is a node in it, with exact start and end lines.
+- A chunk is one whole function or method. Code outside functions (imports, constants) is its own chunk.
+- Each chunk gets a header with file, class and line range, so it keeps its context.
+- It’s stored with commit, path, symbol, line range and a content hash.
+- Long functions are split at blank lines, with the header repeated on each piece.
+- A file with a syntax error falls back to size-based splitting.
+- Other languages use tree-sitter, which works the same way.
+- Why not fixed-size: it cuts functions in half, so a rule and its code can end up in different chunks.
+- Why not semantic chunking: code already has clear boundaries. Semantic splitting guesses them, costs an embedding call per piece, and gives less repeatable results. Meaning-based search belongs in retrieval, after splitting by function.
+- Chunking runs at index time, before any finding is explained, alongside install and tests.
+
+### Retrieval
+
+- Exact symbol match: the most precise lookup, but it needs the exact name.
+- Keyword search (Postgres full-text): good for identifiers and error messages.
+- Embedding search (pgvector, optional): good for “where do we handle retries?”.
+- The three result lists are merged by reciprocal rank fusion: each chunk scores the sum of `1 / (60 + rank)` across the lists it appears in.
+- The query comes from the finding: the failing function’s name, the exception message, and the names called in the code.
+
+### Storage and embeddings
+
+- Postgres holds the chunks (path, symbol, lines, content, hash). It also holds a keyword index, and a vector column if embeddings are used.
+- Embedding options: a hosted code-embedding API (simple, but code leaves Rino) or a self-hosted open model (slower, code stays inside).
+- Embeddings are cached by chunk hash, so unchanged code is never embedded twice.
+
+### Keeping the index cheap
+
+- Git already hashes every file. If a file is unchanged, its hash is the same in the next commit.
+- On each push, `git diff --name-status <last indexed> <new>` lists the files that were added, changed, deleted or renamed. Only those are re-chunked.
+- Unchanged chunks keep their stored data.
+- Keep a cached copy of each repo on the worker and `git fetch` only the new objects, instead of cloning every run.
+- The sandbox gets a clean copy through `git archive`, with no network and no `.git`.
+- Store chunks by file content hash, so a new branch reuses every unchanged file.
+- Never leave the token in the repo’s config. Pass it per command.
+- Cap disk per repo and evict the least recently used copies.
+- After a force push, compare file trees directly or re-index.
+
+### Packing to a token budget
+
+- Fill the prompt in priority order: the finding’s evidence, the target function, tests, callers and callees, the file header, the scoped repo map, project notes, recent commits.
+- Drop the lowest priority first when the budget runs short.
+- Send signatures instead of full bodies for background code. That costs about a tenth of the tokens.
+- Put fixed content (instructions, repo map) first, so prompt caching can reuse it.
+
+### Testing it
+
+- Use the seeded bugs as the test set. The right function is known for each.
+- Compare four setups: fixed-size chunks with embeddings, function chunks with embeddings, function chunks with keyword and symbol search, and grep only.
+- Measure recall in the top 5, the rank of the right function, and tokens per finding.
+- Three sample repos are too few for a real result. Add 10 to 15 more seeded bugs first.
+- My expectation, to be confirmed by the test: function-level chunks win, and keyword plus symbol search nearly matches embeddings at this repo size.
+
+### Large repos
+
+- The per-finding budget stays the same size at any repo size.
+- The final version stores the index per commit and keeps a symbol index built from imports, so callers are found by real references and not by name.
+- The repo map is built from the index and scoped to the finding’s folder.
+- Explain Critical and High findings up front, and Medium and Low when opened.
+- Limit run scope to chosen folders, set a repo size limit with a clear message, and return partial results on timeout.
+
+### Status and build order
+
+- Built: an in-memory function index with `ast` in the review agent script. No stored chunks and no embeddings.
+- Build order:
+  1. Chunker and stored chunks, with symbol and keyword search.
+  2. Token packing.
+  3. The seeded-bug test.
+  4. Embeddings and `search_code`, only if the test shows a gain.
+  5. Incremental indexing and the cached repo.
+
+ ## Other tasks
+ ## How can two open-source tools access repo at the same time?
+How Concurrent Access Works:
+- Concurrent Reads (Safe by Default): Operating systems allow unlimited processes to open and read the same files simultaneously. In a review harness, tools like read_file, git grep, git blame, and static analyzers (ruff, eslint) only read data, so running them in parallel causes zero conflicts.
+- Git Index Locking (Write Protection): Whenever a tool modifies Git state (such as git checkout, git commit, or git fetch), Git creates a temporary .git/index.lock file. If a second tool attempts a Git write operation at the same millisecond, Git immediately blocks it with a lock error to prevent repository corruption.
+
+
+Patterns for Safe Parallel Tool Execution:
+If your harness runs multiple tools concurrently—or if you run two review agents against the same repository—use these patterns to avoid collisions:
+- Use Git Worktrees (git worktree add): Create separate working directories linked to the same .git history. Each tool or agent operates in its own isolated folder on a different branch without duplicating the entire repository on disk.
+- Enforce Read-Only Flags: Pass read-only flags to tools that normally write caches or lockfiles (for example, git --no-optional-locks status or running linters with --no-cache / --cache-dir=/tmp/...).
+- Use In-Memory Parallelism in Python: Inside your harness loop, use Python's built-in concurrent.futures.ThreadPoolExecutor to run read-only tool_calls in parallel safely, while keeping any file-modifying tools sequential.
+
+## Script should be running end-to-end from user repo to system. How?
+ 
+#### Execution Pattern
+| Feature          | Option 1: Push Model (CI/CD + SSH/WinRM)                                    | Option 2: Pull Model (Self-Hosted Runner / Agent)                                    |
+| ---------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| How it works     | GitHub/GitLab connects to your target machine and runs the script remotely. | An agent installed on your target machine listens for repo updates and runs locally. |
+| Best for         | Cloud VMs or servers with reachable IP addresses.                           | On-premise machines behind firewalls or dynamic IPs.                                 |
+| Setup complexity | Low (no agent installation needed on target).                               | Medium (requires installing a runner or management agent).                           |
+ 
+#### Step-by-Step Implementation for Pull Model
+ 
+Using a Self-Hosted Runner (GitHub Actions / GitLab Runner) is the cleanest way to run scripts directly on a target system without opening firewall ports:
+ 
+1. Install the Runner on the Target System:
+
+   * Go to your User Repo → Settings → Actions → Runners → New self-hosted runner.
+
+   * Run the provided setup commands directly on your target Linux or Windows machine and install it as a background service (`./svc.sh install && ./svc.sh start`).
+
+2. Add Your Script to the Repo:
+
+   * Place your script in `scripts/setup.sh` (Linux) or `scripts/setup.ps1` (Windows) and push it to your repository.
+
+3. Create the Automation Workflow (`.github/workflows/execute.yml`):
+
+   * Add this file to your repo so any commit automatically executes the script on your system:
+ 
+```yaml
+
+name: End-to-End Repo to System Execution
+ 
+on:
+
+  push:
+
+    branches: [ main ]
+
+    paths:
+
+      - 'scripts/**'
+
+  workflow_dispatch: # Allows manual trigger button in GitHub UI
+ 
+jobs:
+
+  run-on-system:
+
+    runs-on: self-hosted # Targets your specific machine
+
+    steps:
+
+      - name: Pull latest script from user repo
+
+        uses: actions/checkout@v4
+ 
+      - name: Execute script on Linux system
+
+        if: runner.os == 'Linux'
+
+        run: |
+
+          chmod +x ./scripts/setup.sh
+
+          ./scripts/setup.sh
+ 
+      - name: Execute script on Windows system
+
+        if: runner.os == 'Windows'
+
+        shell: pwsh
+
+        run: |
+
+          .\scripts\setup.ps1
+```
