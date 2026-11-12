@@ -20,11 +20,11 @@ In Week 3 we worked on Code Quality rules which can be enforced on Rino (AI-Powe
 
 3. **Testing and Execution Environment**
 
-    - Checked for multiple tools which can used to check for testing the code using existing tests and validation of code.
-    - Explored multiple ways to execute code such GitHub Actions, DevOps Instance and Sandbox.
+    - Checked for multiple tools which can be used to check for testing the code using existing tests and validation of code.
+    - Explored multiple ways to execute code such as GitHub Actions, DevOps Instance and Sandbox.
 
 4. **Created YAML and Script file for Code Quality Rules Engines**
 
     - Created YAML and Script files necessary for enforcing Code Quality rules.
-    - Started on enforcing it on a local project tot test its efficiency and quality level.
+    - Started on enforcing it on a local project to test its efficiency and quality level.
 
